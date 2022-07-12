@@ -15,6 +15,7 @@
 # misc
 .DS_Store
 /backend/.env
+.*
 
 
 npm-debug.log*
