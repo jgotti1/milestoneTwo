@@ -17,6 +17,13 @@ function CreateProp() {
       window.location.reload(false);
     });
   };
+  // ****** Delete data function *******
+  // const deleteData = (id) => {
+  //   axios.delete(`http://localhost:5000/citrus/${id}`).then(() => {
+  //     window.location.reload(false);
+  //   });
+  // };
+
   return (
     <div className="create-div">
       <h2>Create Order Form</h2>
