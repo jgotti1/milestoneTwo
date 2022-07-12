@@ -14,10 +14,7 @@
 
 # misc
 .DS_Store
-/backend/.env.local
-/backend/.env.development.local
-/backend/.env.test.local
-/backend/.env.production.local
+
 
 npm-debug.log*
 yarn-debug.log*
