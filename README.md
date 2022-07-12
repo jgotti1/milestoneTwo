@@ -1,3 +1,1 @@
 # milestoneTwo
-
-From John
