@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-// import { makeStyles } from "@material-ui/core";
+// import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 
 // const useStyles = makeStyles({
@@ -19,6 +19,8 @@ const handleSubmit = (e) => {
 };
 
 const AddNewProp = () => {
+
+  // const classes = useStyles();
   const [stateUS, setStateUS] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
@@ -35,12 +37,19 @@ const AddNewProp = () => {
 
   return (
     <Container size="sm">
-      <Typography variant="h2" color="textPrimary" component="h2" gutterBottom>
+      <Typography
+        variant="h2"
+        color="textPrimary"
+        component="h2"
+        gutterBottom
+        centered
+      >
         Add a New Property
       </Typography>
 
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <TextField
+          // className={classes.field}
           onChange={(e) => setStateUS(e.target.value)}
           label="State"
           variant="outlined"
@@ -50,6 +59,7 @@ const AddNewProp = () => {
           required
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setCity(e.target.value)}
           label="City"
           variant="outlined"
@@ -59,6 +69,7 @@ const AddNewProp = () => {
           required
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setStreet(e.target.value)}
           label="Street Address"
           variant="outlined"
@@ -68,64 +79,64 @@ const AddNewProp = () => {
           required
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setApt(e.target.value)}
           label="Apartment #"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setSize(e.target.value)}
           label="Property Size (sq ft)"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
           required
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setRentAmount(e.target.value)}
           label="Rent Amount ($)"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
           required
         />
 
         <TextField
+          // className={classes.field}
           onChange={(e) => setOccupied(e.target.value)}
           label="Occupied"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
           required
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setTenantName(e.target.value)}
           label="Tenant Name"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setOccupiedDate(e.target.value)}
           label="Occupied Since"
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
         />
         <TextField
+          // className={classes.field}
           onChange={(e) => setOccupants(e.target.value)}
           label="Number of Occupants"
           inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
           variant="outlined"
           color="primary"
-          margin="dense"
           fullWidth
         />
         {/* <TextField
@@ -157,7 +168,7 @@ const AddNewProp = () => {
           variant="contained"
           endIcon={<KeyboardArrowRightIcon />}
         >
-          Submit
+          Submit New Property
         </Button>
       </form>
     </Container>
