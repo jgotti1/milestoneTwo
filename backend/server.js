@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 mongoose
+<<<<<<< HEAD
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -30,4 +31,9 @@ mongoose
       )
     )
   )
+=======
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  // .connect(CONNECTION_URL)
+  .then(() => app.listen(process.env.PORT, () => console.log(`Mongo connection is established and running on port: ${process.env.PORT} `)))
+>>>>>>> 023048220222a019de4ba4d2c0fdd70593c36f5b
   .catch((err) => console.log(err.message));
