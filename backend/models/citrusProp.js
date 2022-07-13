@@ -4,7 +4,7 @@ const propertySchema = mongoose.Schema({
   state: { type: String, required: true },
   city: { type: String, required: true },
   street: { type: String, required: true },
-  apartmentNum: { type: Number, required: true },
+  apartmentNum: { type: Number, required: false },
   size: { type: Number, required: true },
   rent: { type: Number, required: true },
   occupied: { type: Boolean, required: true },

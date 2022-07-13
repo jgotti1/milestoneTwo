@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import AddNewProp from "./pages/addNewProp";
+import Create from "./components/createRecord/createRecordForm";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/AddNewProp" element={<AddNewProp />} />
+            <Route path="/create" element={<Create />} />
           </Routes>
         </div>
       </BrowserRouter>

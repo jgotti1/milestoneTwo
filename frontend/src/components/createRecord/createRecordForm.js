@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-
+import Button from "@mui/material/Button";
 import axios from "axios";
 
 function CreateProp() {
   const [citrusProp, setCitrusProp] = useState({
-    property_name: "",
-    property_address: "",
-    property_size: "",
+    street: "",
+    state: "",
+    city: "",
   });
 
   const createProp = () => {
@@ -30,9 +30,9 @@ function CreateProp() {
         <TextField
           helperText="Please enter your name"
           id="demo-helper-text-aligned"
-          label="Property Name"
+          label="State"
           onChange={(event) => {
-            setCitrusProp({ ...citrusProp, property_name: event.target.value });
+            setCitrusProp({ ...citrusProp, state: event.target.value });
           }}
         />
       </Box>
@@ -41,9 +41,9 @@ function CreateProp() {
         <TextField
           helperText="Please enter property address"
           id="demo-helper-text-aligned"
-          label="Property Address"
+          label="Street"
           onChange={(event) => {
-            setCitrusProp({ ...citrusProp, property_address: event.target.value });
+            setCitrusProp({ ...citrusProp, street: event.target.value });
           }}
         />
       </Box>
@@ -52,16 +52,16 @@ function CreateProp() {
         <TextField
           helperText="Please enter property size"
           id="demo-helper-text-aligned"
-          label="Property Size"
+          label="city"
           onChange={(event) => {
-            setCitrusProp({ ...citrusProp, property_size: event.target.value });
+            setCitrusProp({ ...citrusProp, city: event.target.value });
           }}
         />
       </Box>
       <br />
-      {/* <Button className="create_button" variant="contained" color="primary" onClick={createProp}>
+      <Button className="create_button" variant="contained" color="primary" onClick={createProp}>
         Enter Order
-      </Button> */}
+      </Button>
     </div>
   );
 }

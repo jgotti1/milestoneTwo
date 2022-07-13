@@ -45,7 +45,7 @@ const AddNewProp = () => {
 
   return (
     <Container size="sm">
-      <Typography variant="h2" color="textPrimary" component="h2" gutterBottom centered>
+      <Typography variant="h3" color="textPrimary" component="h3" gutterBottom centered>
         Add a New Property
       </Typography>
 
