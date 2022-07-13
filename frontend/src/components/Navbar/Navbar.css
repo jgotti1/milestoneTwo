@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: white;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .logo {
     margin-left: 1rem;
-    color: white;
+    color: orange;
     font-size: 50px;
     font-weight: bolder;
 }
@@ -17,16 +18,21 @@
     margin: 25px;
 }
 
+.ul a:hover{
+    color: black;
+}
+
 .item {
     display: flex;
 }
 
 li {
     margin: 0 1rem;
+    list-style: none;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: orange;
     font-weight: bolder;
 }
