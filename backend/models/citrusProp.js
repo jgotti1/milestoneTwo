@@ -11,7 +11,7 @@ const propertySchema = mongoose.Schema({
   tenantName: { type: String, required: false },
   occupiedDate: { type: Date, required: false },
   numOccupants: { type: Number, required: false },
-  pets: { type: Boolean, required: true },
+  pets: { type: Boolean, required: false },
   latePayment: { type: Boolean, required: false },
   tenantRequests: { type: String, required: false },
   tenantNotes: { type: String, required: false },

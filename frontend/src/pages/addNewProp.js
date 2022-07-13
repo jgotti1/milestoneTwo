@@ -4,6 +4,11 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+
 // import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 // import Checkbox from "@mui/material/Checkbox";
@@ -26,12 +31,12 @@ const AddNewProp = () => {
     apartmentNum: "",
     size: "",
     rent: "",
-    occupied: false,
+    occupied: "",
     tenantName: "",
     occupiedDate: Date,
     numOccupants: "",
-    pets: false,
-    latePayment: false,
+    pets: "",
+    latePayment: "",
     tenantRequests: "",
     tenantNotes: "",
   });
@@ -45,10 +50,10 @@ const AddNewProp = () => {
 
   return (
     <Container size="sm">
-      <Typography variant="h3" color="textPrimary" component="h3" gutterBottom centered>
+      <Typography variant="h3" color="textPrimary" component="h3" gutterBottom>
         Add a New Property
       </Typography>
-
+      <h5>* = Required Field</h5>
       <Box>
         <TextField
           // className={classes.field}
@@ -121,7 +126,25 @@ const AddNewProp = () => {
           fullWidth
           required
         />
-        <TextField
+
+        <FormControl sx={{ minWidth: "100%" }}>
+          <InputLabel id="demo-simple-select-label">Occupied *</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={newProp.occupied}
+            label="Occupied"
+            onChange={(e) => {
+              setNewProp({ ...newProp, occupied: e.target.value });
+            }}
+          >
+            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={"true"}>Yes</MenuItem>
+            <MenuItem value={"false"}>No</MenuItem>
+          </Select>
+        </FormControl>
+
+        {/* <TextField
           // className={classes.field}
           onChange={(e) => {
             setNewProp({ ...newProp, occupied: e.target.value });
@@ -132,7 +155,7 @@ const AddNewProp = () => {
           margin="dense"
           fullWidth
           required
-        />
+        /> */}
         {/* <Checkbox
           checked= {setNewProp({...newProp, pets: true})}
           // onChange={handleChange}
@@ -172,7 +195,24 @@ const AddNewProp = () => {
           margin="dense"
           fullWidth
         />
-        <TextField
+
+        <FormControl sx={{ minWidth: "100%" }}>
+          <InputLabel id="demo-simple-select-label">Pets</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={newProp.pets}
+            label="Pets"
+            onChange={(e) => {
+              setNewProp({ ...newProp, pets: e.target.value });
+            }}
+          >
+            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={"true"}>Yes</MenuItem>
+            <MenuItem value={"false"}>No</MenuItem>
+          </Select>
+        </FormControl>
+        {/* <TextField
           // className={classes.field}
           onChange={(e) => {
             setNewProp({ ...newProp, pets: e.target.value });
@@ -183,8 +223,25 @@ const AddNewProp = () => {
           color="primary"
           margin="dense"
           fullWidth
-        />
-        <TextField
+        /> */}
+
+        <FormControl sx={{ minWidth: "100%" }}>
+          <InputLabel id="demo-simple-select-label">Late Payment</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={newProp.latePayment}
+            label="Late Payment"
+            onChange={(e) => {
+              setNewProp({ ...newProp, latePayment: e.target.value });
+            }}
+          >
+            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={"true"}>Yes</MenuItem>
+            <MenuItem value={"false"}>No</MenuItem>
+          </Select>
+        </FormControl>
+        {/* <TextField
           onChange={(e) => {
             setNewProp({ ...newProp, latePayment: e.target.value });
           }}
@@ -193,7 +250,7 @@ const AddNewProp = () => {
           color="primary"
           margin="dense"
           fullWidth
-        />
+        /> */}
         <TextField
           onChange={(e) => {
             setNewProp({ ...newProp, tenantRequests: e.target.value });
@@ -215,7 +272,7 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <Button id="NewPropButton" onClick={handleSubmit} color="primary" margin="normal" variant="contained" textAlign="center" endIcon={<KeyboardArrowRightIcon />}>
+        <Button id="NewPropButton" onClick={handleSubmit} color="primary" margin="normal" variant="contained" textalign="center" endIcon={<KeyboardArrowRightIcon />}>
           Submit New Property
         </Button>
       </Box>
