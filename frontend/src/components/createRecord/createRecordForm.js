@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Button from "@material-ui/core/Button";
-import "./createRecordForm.css";
+
 import axios from "axios";
 
 function CreateProp() {
@@ -60,9 +59,9 @@ function CreateProp() {
         />
       </Box>
       <br />
-      <Button className="create_button" variant="contained" color="primary" onClick={createProp}>
+      {/* <Button className="create_button" variant="contained" color="primary" onClick={createProp}>
         Enter Order
-      </Button>
+      </Button> */}
     </div>
   );
 }

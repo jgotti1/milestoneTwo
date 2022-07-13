@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Pages & Components
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import CreateProp from "./components/createRecord/createRecordForm";
+import AddNewProp from "./pages/addNewProp";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
-            <Route path="/" element={<CreateProp />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/AddNewProp" element={<AddNewProp />} />
           </Routes>
         </div>
       </BrowserRouter>
