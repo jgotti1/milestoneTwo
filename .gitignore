@@ -15,7 +15,6 @@
 
 # misc
 .DS_Store
-/backend/.env
 .*
 
 
