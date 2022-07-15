@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Pages & Components
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
-import CreateProp from "./pages/addNewProp";
+import Footer from "./components/Footer"
+import CreateProp from './components/createRecord/createRecordForm'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
