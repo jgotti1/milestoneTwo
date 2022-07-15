@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pages & Components
-import Home from './pages/Home'
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer"
 import CreateProp from './components/createRecord/createRecordForm'
 
 function App() {

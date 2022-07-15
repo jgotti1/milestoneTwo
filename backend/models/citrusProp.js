@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//schema for project
 const propertySchema = mongoose.Schema({
   state: { type: String, required: true },
   city: { type: String, required: true },
