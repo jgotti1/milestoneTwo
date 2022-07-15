@@ -13,7 +13,6 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 // import Checkbox from "@mui/material/Checkbox";
 import axios from "axios";
-import { unstable_composeClasses } from "@mui/material";
 
 // const useStyles = makeStyles({
 //   field: {
@@ -133,9 +132,9 @@ const AddNewProp = () => {
               console.log(e.target.value);
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
-            <MenuItem value={true}>Yes</MenuItem>
-            <MenuItem value={false}>No</MenuItem>
+            <MenuItem value={""}></MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
         <TextField
@@ -182,9 +181,9 @@ const AddNewProp = () => {
               setNewProp({ ...newProp, pets: e.target.value });
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
-            <MenuItem value={"true"}>Yes</MenuItem>
-            <MenuItem value={"false"}>No</MenuItem>
+            <MenuItem value={""}></MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: "100%" }}>
@@ -198,9 +197,9 @@ const AddNewProp = () => {
               setNewProp({ ...newProp, latePayment: e.target.value });
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
-            <MenuItem value={"true"}>Yes</MenuItem>
-            <MenuItem value={"false"}>No</MenuItem>
+            <MenuItem value={""}></MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
 
