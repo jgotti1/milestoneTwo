@@ -1,34 +1,45 @@
 import React, { useState, useEffect } from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import axios from "axios";
+
+import {
+  Typography,
+  Paper,
+  TableRow,
+  TableHead,
+  TableContainer,
+  TableCell,
+  TableBody,
+  Table,
+  IconButton
+} from "@mui/material";
 import "./showProp.css";
-import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+
+import axios from "axios";
+
+
+const developmentURL = "http://localhost:5000/citrus";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`http://localhost:5000/citrus/${id}`).then(() => {
+    axios.delete(`developmentURL/${id}`).then(() => {
       window.location.reload(false);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/citrus").then((allProps) => {
+    axios.get(developmentURL).then((allProps) => {
       setPropList(allProps.data);
       console.log(propList);
     }, []);
   });
 
+
   return (
     <>
-      <h2 className="heading">All Properties</h2>
+      <Typography variant="h2" sx={{textAlign: 'center'}} color="primary">
+        All Properties
+      </Typography>
       <TableContainer component={Paper} className="table">
         <Table className="table_list" aria-label="simple table">
           <TableHead>
@@ -59,8 +70,8 @@ export default function ShowProps() {
                 <TableCell align="right">{props.city}</TableCell>
                 <TableCell align="right">{props.street}</TableCell>
                 <TableCell align="right">{props.apartmentNum}</TableCell>
-                <TableCell align="right">{props.size}</TableCell>
-                <TableCell align="right">{props.rent}</TableCell>
+                <TableCell align="right">{`${props.size}sq ft`}</TableCell>
+                <TableCell align="right">{`$${props.rent}`}</TableCell>
                 <TableCell align="right">{props.occupied}</TableCell>
                 <TableCell align="right">{props.occupiedDate}</TableCell>
                 <TableCell align="right">{props.tenantName}</TableCell>

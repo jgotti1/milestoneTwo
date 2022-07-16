@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
   res.send("Hello Citrus Property Managment Site!");
 });
 
+
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   // .connect(CONNECTION_URL)

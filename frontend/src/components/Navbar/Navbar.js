@@ -10,7 +10,7 @@ const Navbar = () => {
             <nav className="item">
                 <ul className='ul'>
                     <li>
-                        <Link to="/createprop">Create</Link>
+                        <Link to="/AddNewProp">Create</Link>
                     </li>
                     <li>
                         <Link to="/">Update</Link>

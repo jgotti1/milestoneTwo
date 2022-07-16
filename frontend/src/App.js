@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import CreateProp from "./pages/addNewProp";
+import AddNewProp from "./pages/AddNewProp";
+import ShowProps from "./pages/ShowProps";
+import FourOhFour from "./pages/404";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/createprop" element={<CreateProp />} />
+            <Route path="/AddNewProp" element={<AddNewProp />} />
+            <Route path="/ShowProp" element={<ShowProps />}></Route>
+            <Route path="*" element={<FourOhFour />}>
+            </Route>
           </Routes>
         </div>
       </BrowserRouter>
