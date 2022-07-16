@@ -15,9 +15,12 @@ import { all } from "q";
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`http://localhost:5000/api/citrus/${id}`).then(() => {
-      window.location.reload(false);
-    });
+    axios
+      .delete(`http://localhost:5000/api/citrus/${id}`)
+      .then(() => {
+        // window.location.reload(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {

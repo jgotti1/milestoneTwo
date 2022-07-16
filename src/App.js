@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/AddNewProp" element={<AddNewProp />} />
             <Route path="/ShowProp" element={<ShowProps />}></Route>
-            <Route path="*" element={<FourOhFour />}></Route>
+            {/* <Route path="*" element={<FourOhFour />}></Route> */}
           </Routes>
         </div>
       </BrowserRouter>

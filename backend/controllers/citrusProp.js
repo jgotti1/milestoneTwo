@@ -31,6 +31,7 @@ const createData = async (req, res) => {
 };
 const deleteData = async (req, res) => {
   const id = req.params.id;
+  console.log(id);
   try {
     await CitrusProperty.findByIdAndRemove(id).exec();
     res.send("Record Deleted Successfully!");

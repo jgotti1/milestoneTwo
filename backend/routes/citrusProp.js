@@ -5,6 +5,6 @@ const router = Router();
 
 router.get("/citrus", getData);
 router.post("/citrus", createData);
-router.delete("/citrus:id", deleteData);
+router.delete("/citrus/:id", deleteData);
 
 module.exports = router;
