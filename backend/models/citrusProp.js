@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 //schema for project
 const propertySchema = mongoose.Schema({
   state: { type: String, required: true },
@@ -19,4 +19,4 @@ const propertySchema = mongoose.Schema({
 
 const CitrusProperty = mongoose.model("CitrusProperty", propertySchema);
 
-export default CitrusProperty;
+module.exports = CitrusProperty;
