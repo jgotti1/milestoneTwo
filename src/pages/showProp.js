@@ -16,9 +16,11 @@ import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import axios from "axios";
+import "./showProp.css";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-
-const developmentURL = "http://localhost:5000/citrus";
+const developmentURL= "http://localhost:5000/api/citrus"
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
@@ -76,8 +78,8 @@ export default function ShowProps() {
                 <TableCell align="right">{props.city}</TableCell>
                 <TableCell align="right">{props.street}</TableCell>
                 <TableCell align="right">{props.apartmentNum}</TableCell>
-                <TableCell align="right">{`${props.size}sq ft`}</TableCell>
-                <TableCell align="right">{`$${props.rent}`}</TableCell>
+                <TableCell align="right">{props.size}</TableCell>
+                <TableCell align="right">{props.rent}</TableCell>
                 <TableCell align="right">{props.occupied}</TableCell>
                 <TableCell align="right">{props.occupiedDate}</TableCell>
                 <TableCell align="right">{props.tenantName}</TableCell>

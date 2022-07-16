@@ -31,13 +31,11 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
-  const developmentURL = "http://localhost:5000/citrus";
+  const developmentURL = "http://localhost:5000/api/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(developmentURL, newProp).then(() => {
-      window.location.reload(false);
-    });
+    axios.post(developmentURL, newProp);
   };
 
   return (

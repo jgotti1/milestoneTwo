@@ -1,19 +1,29 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import cors from "cors";
-import dotenv from "dotenv";
-import citrusPropRoutes from "./routes/citrusProp.js";
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
+const path = require("path");
+const router = require("./routes/citrusProp.js");
+const { getData } = require("./controllers/citrusProp.js");
 
 const app = express();
 app.use(bodyParser.json({ limit: "20mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
 app.use(cors());
-dotenv.config();
 
+app.use(express.static(path.join(__dirname, "..", "build")));
+
+// app.use(express.static("public"));
+// dotenv.config();
+
+app.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+});
 //Route Paths
-app.use("/citrus", citrusPropRoutes);
-app.get("/", (req, res) => {
+app.use("/api", router);
+app.get("/api/citrus", (req, res) => {
+  console.log(res);
   res.send("Hello Citrus Property Managment Site!");
 });
 

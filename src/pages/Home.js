@@ -1,4 +1,4 @@
-import ShowProps from "./ShowProps";
+import ShowProps from "./showProp";
 
 const Home = () => {
   return (
