@@ -9,7 +9,8 @@ import {
   TableCell,
   TableBody,
   Table,
-  IconButton
+  IconButton,
+  Box
 } from "@mui/material";
 import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -22,7 +23,7 @@ const developmentURL = "http://localhost:5000/citrus";
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`developmentURL/${id}`).then(() => {
+    axios.delete(`${developmentURL}/${id}`).then(() => {
       window.location.reload(false);
     });
   };
@@ -30,14 +31,19 @@ export default function ShowProps() {
   useEffect(() => {
     axios.get(developmentURL).then((allProps) => {
       setPropList(allProps.data);
-      console.log(propList);
+      // console.log(propList);
     }, []);
   });
 
 
   return (
-    <>
-      <Typography variant="h2" sx={{textAlign: 'center'}} color="primary">
+    <Box
+      textAlign="center"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+    >
+      <Typography variant="h2" color="primary">
         All Properties
       </Typography>
       <TableContainer component={Paper} className="table">
@@ -95,6 +101,6 @@ export default function ShowProps() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 }
