@@ -8,23 +8,11 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-
-// import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
-// import Checkbox from "@mui/material/Checkbox";
 import axios from "axios";
-import { unstable_composeClasses } from "@mui/material";
 
-// const useStyles = makeStyles({
-//   field: {
-//     marginTop: 20,
-//     marginBottom: 20,
-//     display: "block",
-//   },
-// });
 
 const AddNewProp = () => {
-  // const classes = useStyles();
   const [newProp, setNewProp] = useState({
     state: "",
     city: "",
@@ -42,9 +30,11 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
+  const developmentURL = "http://localhost:5000/citrus";
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/citrus", newProp).then(() => {
+    axios.post(developmentURL, newProp).then(() => {
       window.location.reload(false);
     });
   };
@@ -134,8 +124,8 @@ const AddNewProp = () => {
             }}
           >
             <MenuItem value={""}></MenuItem>
-            <MenuItem value={true}>Yes</MenuItem>
-            <MenuItem value={false}>No</MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
         <TextField
@@ -183,8 +173,8 @@ const AddNewProp = () => {
             }}
           >
             <MenuItem value={""}></MenuItem>
-            <MenuItem value={"true"}>Yes</MenuItem>
-            <MenuItem value={"false"}>No</MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: "100%" }} margin="dense">
@@ -199,8 +189,8 @@ const AddNewProp = () => {
             }}
           >
             <MenuItem value={""}></MenuItem>
-            <MenuItem value={"true"}>Yes</MenuItem>
-            <MenuItem value={"false"}>No</MenuItem>
+            <MenuItem value={"Yes"}>Yes</MenuItem>
+            <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
 
