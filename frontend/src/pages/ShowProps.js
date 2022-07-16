@@ -11,7 +11,7 @@ import "./showProp.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const developmentURL = "http://localhost:5000/citrus";
+const developmentURL = "http://localhost:5001/citrus";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);

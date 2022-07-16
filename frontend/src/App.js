@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pages & Components
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import AddNewProp from "./pages/AddNewProp";
+import AddNewProp from "./pages/addNewProp";
 import ShowProps from "./pages/ShowProps";
 import FourOhFour from "./pages/404";
 

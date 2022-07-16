@@ -30,7 +30,7 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
-  const developmentURL = "http://localhost:5000/citrus";
+  const developmentURL = "http://localhost:5001/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
