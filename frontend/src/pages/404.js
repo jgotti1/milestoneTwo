@@ -1,12 +1,18 @@
-import { Paper, Typography, Link } from "@mui/material"
+import { Paper, Typography, Button, Box } from "@mui/material"
 
 const FourOhFour = () => {
   return (
-    <Paper variant="outlined">
-      <img src="../images/orange-slice.png" />
-      <Typography>404 Error. Page Not Found</Typography>
-      <Link to="/">Go Back Home</Link>
-    </Paper>
+    <Box textAlign="center">
+        <img src="../images/orange-slice.png" />
+        <Typography 
+          variant="h2"
+          sx={{mb:3}}>
+          404 Error. Page Not Found
+        </Typography>
+        <Button variant="contained" href="/">
+          Go Back Home
+        </Button>
+    </Box>
   );
 }
  
