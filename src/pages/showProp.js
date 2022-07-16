@@ -16,17 +16,22 @@ const developmentURL = "http://localhost:5001/citrus";
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`developmentURL/${id}`).then(() => {
-      window.location.reload(false);
-    });
+    axios
+      .delete(`http://localhost:5000/api/citrus/${id}`)
+      .then(() => {
+        // window.location.reload(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    axios.get(developmentURL).then((allProps) => {
-      setPropList(allProps.data);
-      console.log(propList);
-    }, []);
-  });
+    axios
+      .get("http://localhost:5000/api/citrus")
+      .then((allProps) => {
+        setPropList(allProps.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>

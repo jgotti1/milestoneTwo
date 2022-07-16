@@ -1,16 +1,7 @@
 import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 import axios from "axios";
-
 
 const AddNewProp = () => {
   const [newProp, setNewProp] = useState({
@@ -30,15 +21,11 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
-  const developmentURL = "http://localhost:5001/citrus";
+  const developmentURL = "http://localhost:5001/api/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(developmentURL, newProp).then(() => {
-      window.location.reload(false);
-    }).catch(err => {
-      console.log(err)
-    })
+    axios.post(developmentURL, newProp);
   };
 
   return (
@@ -217,7 +204,8 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <Button sx={{ m: 2, p: 3, fontSize: 15, alignItems: 'center' }}
+        <Button
+          sx={{ m: 2, p: 3, fontSize: 15, alignItems: "center" }}
           id="NewPropButton"
           onClick={handleSubmit}
           color="primary"
