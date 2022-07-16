@@ -26,9 +26,10 @@ app.get("/api/citrus", (req, res) => {
   console.log(res);
   res.send("Hello Citrus Property Managment Site!");
 });
-
+const PORT = 5000;
+MOSGO_URI = "mongodb+srv://citrusProp:citrusProp321123@cirrusprop.7jtgi.mongodb.net/?retryWrites=true&w=majority";
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   // .connect(CONNECTION_URL)
-  .then(() => app.listen(process.env.PORT, () => console.log(`Mongo connection is established and running on port: ${process.env.PORT} `)))
+  .then(() => app.listen(PORT, () => console.log(`Mongo connection is established and running on port: ${PORT} `)))
   .catch((err) => console.log(err.message));
