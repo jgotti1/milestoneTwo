@@ -10,13 +10,13 @@ import axios from "axios";
 import "./showProp.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { all } from "q";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
     axios
-      .delete(`http://localhost:5000/api/citrus/${id}`)
+      .delete(`https://citrusproperty.herokuapp.com/api/citrus/${id}`)
+      // .delete(`http://localhost:5000/api/citrus/${id}`)
       .then(() => {
         // window.location.reload(false);
       })
@@ -25,7 +25,8 @@ export default function ShowProps() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/citrus")
+      .get("https://citrusproperty.herokuapp.com/api/citrus")
+      // .get("http://localhost:5000/api/citrus")
       .then((allProps) => {
         setPropList(allProps.data);
       })

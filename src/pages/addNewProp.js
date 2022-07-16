@@ -21,7 +21,7 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
-  const developmentURL = "http://localhost:5000/api/citrus";
+  const developmentURL = "https://citrusproperty.herokuapp.com/api/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
