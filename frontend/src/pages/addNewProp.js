@@ -121,7 +121,7 @@ const AddNewProp = () => {
           fullWidth
           required
         />
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Occupied *</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -133,7 +133,7 @@ const AddNewProp = () => {
               console.log(e.target.value);
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={""}></MenuItem>
             <MenuItem value={true}>Yes</MenuItem>
             <MenuItem value={false}>No</MenuItem>
           </Select>
@@ -171,7 +171,7 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Pets</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -182,12 +182,12 @@ const AddNewProp = () => {
               setNewProp({ ...newProp, pets: e.target.value });
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={""}></MenuItem>
             <MenuItem value={"true"}>Yes</MenuItem>
             <MenuItem value={"false"}>No</MenuItem>
           </Select>
         </FormControl>
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Late Payment</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -198,7 +198,7 @@ const AddNewProp = () => {
               setNewProp({ ...newProp, latePayment: e.target.value });
             }}
           >
-            <MenuItem value={""}>=</MenuItem>
+            <MenuItem value={""}></MenuItem>
             <MenuItem value={"true"}>Yes</MenuItem>
             <MenuItem value={"false"}>No</MenuItem>
           </Select>
@@ -225,7 +225,13 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <Button id="NewPropButton" onClick={handleSubmit} color="primary" margin="normal" variant="contained" textalign="center" endIcon={<KeyboardArrowRightIcon />}>
+        <Button sx= {{m:2, p:3, fontSize: 15, alignItems: 'center'  }}
+          id="NewPropButton"
+          onClick={handleSubmit}
+          color="primary"
+          variant="contained"
+          endIcon={<KeyboardArrowRightIcon />}
+        >
           Submit New Property
         </Button>
       </Box>
