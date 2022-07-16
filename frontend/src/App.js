@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
 import AddNewProp from "./pages/AddNewProp";
+import ShowProps from "./pages/ShowProps";
+import FourOhFour from "./pages/404";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/AddNewProp" element={<AddNewProp />} />
+            <Route path="/ShowProp" element={<ShowProps />}></Route>
+            <Route path="*" element={<FourOhFour />}>
+            </Route>
           </Routes>
         </div>
       </BrowserRouter>
