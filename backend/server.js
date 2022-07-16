@@ -5,7 +5,6 @@ const cors = require("cors");
 require("dotenv").config();
 const path = require("path");
 const router = require("./routes/citrusProp.js");
-const { getData } = require("./controllers/citrusProp.js");
 
 const app = express();
 app.use(bodyParser.json({ limit: "20mb", extended: true }));
@@ -26,7 +25,6 @@ app.get("/api/citrus", (req, res) => {
   console.log(res);
   res.send("Hello Citrus Property Managment Site!");
 });
-
 
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
