@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import {
+  Typography,
+  Box,
+  Button,
+  Container,
+  FormControl,
+  Select,
+  InputLabel,
+  MenuItem,
+  TextField,
+} from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 import axios from "axios";
+
 
 
 const AddNewProp = () => {
