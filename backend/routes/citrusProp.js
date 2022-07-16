@@ -1,10 +1,10 @@
-import express from "express";
-import { getData, createData, deleteData } from "../controllers/citrusProp.js";
+const { Router } = require("express");
+const { getData, createData, deleteData } = require("../controllers/citrusProp.js");
 
-const router = express.Router();
+const router = Router();
 
-router.get("/", getData);
-router.post("/", createData);
-router.delete("/:id", deleteData);
+router.get("/citrus", getData);
+router.post("/citrus", createData);
+router.delete("/citrus:id", deleteData);
 
-export default router;
+module.exports = router;

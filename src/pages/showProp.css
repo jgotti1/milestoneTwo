@@ -1,0 +1,10 @@
+.table_list {
+  max-width: 90%;
+}
+.table {
+  display: grid;
+  justify-items: center;
+}
+.heading {
+  text-align: center;
+}
