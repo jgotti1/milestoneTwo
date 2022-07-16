@@ -8,22 +8,11 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-
-// import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
-// import Checkbox from "@mui/material/Checkbox";
 import axios from "axios";
 
-// const useStyles = makeStyles({
-//   field: {
-//     marginTop: 20,
-//     marginBottom: 20,
-//     display: "block",
-//   },
-// });
 
 const AddNewProp = () => {
-  // const classes = useStyles();
   const [newProp, setNewProp] = useState({
     state: "",
     city: "",
@@ -41,9 +30,11 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
+  const developmentURL = "http://localhost:5000/citrus";
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/citrus", newProp).then(() => {
+    axios.post(developmentURL, newProp).then(() => {
       window.location.reload(false);
     });
   };
@@ -120,7 +111,7 @@ const AddNewProp = () => {
           fullWidth
           required
         />
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Occupied *</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -170,7 +161,7 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Pets</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -186,7 +177,7 @@ const AddNewProp = () => {
             <MenuItem value={"No"}>No</MenuItem>
           </Select>
         </FormControl>
-        <FormControl sx={{ minWidth: "100%" }}>
+        <FormControl sx={{ minWidth: "100%" }} margin="dense">
           <InputLabel id="demo-simple-select-label">Late Payment</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -224,7 +215,13 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <Button id="NewPropButton" onClick={handleSubmit} color="primary" margin="normal" variant="contained" textalign="center" endIcon={<KeyboardArrowRightIcon />}>
+        <Button sx= {{m:2, p:3, fontSize: 15, alignItems: 'center'  }}
+          id="NewPropButton"
+          onClick={handleSubmit}
+          color="primary"
+          variant="contained"
+          endIcon={<KeyboardArrowRightIcon />}
+        >
           Submit New Property
         </Button>
       </Box>

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import CreateProp from "./pages/addNewProp";
+import AddNewProp from "./pages/AddNewProp";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/createprop" element={<CreateProp />} />
+            <Route path="/AddNewProp" element={<AddNewProp />} />
           </Routes>
         </div>
       </BrowserRouter>

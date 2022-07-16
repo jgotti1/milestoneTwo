@@ -11,16 +11,18 @@ import "./showProp.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+const developmentURL = "http://localhost:5000/citrus";
+
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`http://localhost:5000/citrus/${id}`).then(() => {
+    axios.delete(`developmentURL/${id}`).then(() => {
       window.location.reload(false);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/citrus").then((allProps) => {
+    axios.get(developmentURL).then((allProps) => {
       setPropList(allProps.data);
       console.log(propList);
     }, []);
