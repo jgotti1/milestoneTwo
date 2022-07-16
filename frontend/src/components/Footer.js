@@ -10,7 +10,11 @@ const Footer = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" color="primary">
+            <AppBar 
+            position="static" 
+            bottom="0" 
+            color="primary"
+            style={{position: "fixed", bottom: 0, marginTop: "35px" }}>
                 <Toolbar>
                     <Typography variant="caption" component="div" sx={{ flexGrow: 1 }} color="secondary" >
                         Citrus Property Management &copy; {new Date().getFullYear()}
