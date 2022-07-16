@@ -22,10 +22,13 @@ const AddNewProp = () => {
   });
 
   const developmentURL = "https://citrusproperty.herokuapp.com/api/citrus";
+  // const developmentURL = "http://localhost:5000/api/citrus/api/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(developmentURL, newProp);
+    axios.post(developmentURL, newProp).then(() => {
+      window.location.reload();
+    });
   };
 
   return (
@@ -109,7 +112,6 @@ const AddNewProp = () => {
             label="Occupied"
             onChange={(e) => {
               setNewProp({ ...newProp, occupied: e.target.value });
-              console.log(e.target.value);
             }}
           >
             <MenuItem value={""}></MenuItem>

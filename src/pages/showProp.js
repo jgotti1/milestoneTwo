@@ -18,7 +18,7 @@ export default function ShowProps() {
       .delete(`https://citrusproperty.herokuapp.com/api/citrus/${id}`)
       // .delete(`http://localhost:5000/api/citrus/${id}`)
       .then(() => {
-        // window.location.reload(false);
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
