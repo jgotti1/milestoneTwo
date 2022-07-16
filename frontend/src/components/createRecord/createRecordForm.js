@@ -12,7 +12,7 @@ function CreateProp() {
   });
 
   const createProp = () => {
-    axios.post("http://localhost:5000/citrus", citrusProp).then(() => {
+    axios.post("http://localhost:5001/citrus", citrusProp).then(() => {
       window.location.reload(false);
     });
   };

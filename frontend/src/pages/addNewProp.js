@@ -31,12 +31,14 @@ const AddNewProp = () => {
   });
 
   const developmentURL = "http://localhost:5000/citrus";
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(developmentURL, newProp).then(() => {
       window.location.reload(false);
-    });
+    }).catch(err => {
+      console.log(err)
+    })
   };
 
   return (
@@ -215,7 +217,7 @@ const AddNewProp = () => {
           fullWidth
         />
 
-        <Button sx= {{m:2, p:3, fontSize: 15, alignItems: 'center'  }}
+        <Button sx={{ m: 2, p: 3, fontSize: 15, alignItems: 'center' }}
           id="NewPropButton"
           onClick={handleSubmit}
           color="primary"
