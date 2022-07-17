@@ -27,7 +27,7 @@ const AddNewProp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(developmentURL, newProp).then(() => {
-      window.location.reload(true);
+      // window.location.reload(false);
     });
   };
 
