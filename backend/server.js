@@ -1,8 +1,8 @@
 const express = require("express");
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
 const path = require("path");
 const router = require("./routes/citrusProp.js");
 

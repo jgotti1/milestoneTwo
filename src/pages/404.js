@@ -3,7 +3,7 @@ import { Typography, Button, Box } from "@mui/material"
 const FourOhFour = () => {
   return (
     <Box textAlign="center">
-        <img src="../images/orange-slice.png" />
+        <img src="../images/orange-slice.png" alt="orange slice"/>
         <Typography 
           variant="h2"
           sx={{mb:3}}>
