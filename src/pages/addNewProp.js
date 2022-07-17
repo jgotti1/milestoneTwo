@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
-import ShowProp from "./ShowProp";
 import { useNavigate } from "react-router-dom";
 
 const AddNewProp = () => {
@@ -30,7 +29,7 @@ const AddNewProp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(developmentURL, newProp).then(() => {
-      navigate("/");
+      navigate("/showProp");
     });
   };
 
