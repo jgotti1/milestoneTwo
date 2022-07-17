@@ -1,5 +1,1 @@
 # milestoneTwo
-
-Backend
-
-FrontEnd

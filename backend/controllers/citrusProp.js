@@ -4,20 +4,12 @@ const getData = async (req, res) => {
   try {
     const allData = await CitrusProperty.find();
     res.status(200).json(allData);
+    console.log(allData);
     return allData;
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
 };
-
-// const getData = () => {
-//   return new Promise((resolve, reject) => {
-//     const allData = CitrusProperty.find();
-//     console.log(allData);
-//     if (err) return reject(err);
-//     return resolve(allData);
-//   });
-// };
 const createData = async (req, res) => {
   const data = req.body;
   console.log(data, "create test");
