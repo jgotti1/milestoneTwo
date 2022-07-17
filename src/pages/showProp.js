@@ -7,13 +7,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
 const developmentURL = "http://localhost:5000/api/citrus";
+const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
     axios
-      .delete(`https://citrusproperty.herokuapp.com/api/citrus/${id}`)
-      // .delete(`http://localhost:5000/api/citrus/${id}`)
+      .delete(`${developmentURL}/${id}`)
       .then(() => {
         window.location.reload();
       })
@@ -22,8 +22,7 @@ export default function ShowProps() {
 
   useEffect(() => {
     axios
-      .get("https://citrusproperty.herokuapp.com/api/citrus")
-      // .get("http://localhost:5000/api/citrus")
+      .get(developmentURL)
       .then((allProps) => {
         setPropList(allProps.data);
       })
