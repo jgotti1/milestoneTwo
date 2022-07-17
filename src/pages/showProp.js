@@ -5,7 +5,6 @@ import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import axios from "axios";
-import "./showProp.css";
 
 const developmentURL = "http://localhost:5000/api/citrus";
 

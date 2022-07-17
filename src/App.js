@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import AddNewProp from "./pages/addNewProp";
 import ShowProps from "./pages/showProp";
 
+
 function App() {
   return (
     <div className="App">
