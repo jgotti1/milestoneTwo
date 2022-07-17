@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
+import ShowProp from "./ShowProp";
+import { useHistory } from "react-router-dom";
 
 const AddNewProp = () => {
   const [newProp, setNewProp] = useState({
@@ -21,13 +23,14 @@ const AddNewProp = () => {
     tenantNotes: "",
   });
 
+  const history = useHistory();
   const developmentURL = "https://citrusproperty.herokuapp.com/api/citrus";
   // const developmentURL = "http://localhost:5000/api/citrus/api/citrus";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(developmentURL, newProp).then(() => {
-      // window.location.reload(false);
+      history.push("/");
     });
   };
 

@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
 import AddNewProp from "./pages/addNewProp";
-import ShowProps from "./pages/showProp";
+import ShowProps from "./pages/ShowProp";
 
 function App() {
   return (
