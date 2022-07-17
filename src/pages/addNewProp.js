@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React, { useState, useNavigate } from "react";
-import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
-=======
 import React, { useState } from "react";
-import { useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'STAT
 import {
   Typography,
   Box,
@@ -15,7 +11,6 @@ import {
   MenuItem,
   TextField
 } from "@mui/material";
->>>>>>> e59af5671a43ae0f618261c7ed704f635d3aedcb
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
 
