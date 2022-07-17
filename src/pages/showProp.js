@@ -1,47 +1,37 @@
 import React, { useState, useEffect } from "react";
 
-import {
-  Typography,
-  Paper,
-  TableRow,
-  TableHead,
-  TableContainer,
-  TableCell,
-  TableBody,
-  Table,
-  IconButton,
-  Box
-} from "@mui/material";
+import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box } from "@mui/material";
 import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import axios from "axios";
 
-const developmentURL= "http://localhost:5000/api/citrus"
+const developmentURL = "http://localhost:5000/api/citrus";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
-    axios.delete(`${developmentURL}/${id}`).then(() => {
-      window.location.reload(false);
-    });
+    axios
+      .delete(`https://citrusproperty.herokuapp.com/api/citrus/${id}`)
+      // .delete(`http://localhost:5000/api/citrus/${id}`)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    axios.get(developmentURL).then((allProps) => {
-      setPropList(allProps.data);
-      // console.log(propList);
-    }, []);
-  });
-
+    axios
+      .get("https://citrusproperty.herokuapp.com/api/citrus")
+      // .get("http://localhost:5000/api/citrus")
+      .then((allProps) => {
+        setPropList(allProps.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
-    <Box
-      textAlign="center"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
-    >
+    <Box textAlign="center" justifyContent="center" alignItems="center" minHeight="100vh">
       <Typography variant="h2" color="primary">
         All Properties
       </Typography>
