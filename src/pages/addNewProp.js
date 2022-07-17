@@ -29,7 +29,7 @@ const AddNewProp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(developmentURL, newProp).then(() => {
-      navigate("/ShowProp");
+      // navigate("/ShowProp");
     });
   };
 
