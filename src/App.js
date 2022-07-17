@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/AddNewProp" element={<AddNewProp />} />
-            <Route path="/" element={<ShowProps />}></Route>
+            <Route path="/ShowProp" element={<ShowProps />}></Route>
             {/* <Route path="*" element={<FourOhFour />}></Route> */}
           </Routes>
         </div>
@@ -27,4 +27,3 @@ function App() {
 }
 
 export default App;
-ShowProp
