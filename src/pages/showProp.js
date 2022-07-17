@@ -6,8 +6,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import axios from "axios";
 import "./showProp.css";
-import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 const developmentURL = "http://localhost:5000/api/citrus";
 
