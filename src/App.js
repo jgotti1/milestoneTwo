@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import AddNewProp from "./pages/addNewProp";
-import ShowProps from "./pages/showProp";
+import AddNewProp from "./pages/AddNewProp";
+import ShowProps from "./pages/ShowProp";
 import FourOhFour from "./pages/404";
 
 function App() {

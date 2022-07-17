@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 import {
   Typography,
   Box,
@@ -33,9 +33,14 @@ const AddNewProp = () => {
 
   const developmentURL = "http://localhost:5000/api/citrus";
 
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(developmentURL, newProp);
+    axios.post(developmentURL, newProp)
+    .then (() => 
+      navigate('/showProp')
+    )
   };
 
   return (
