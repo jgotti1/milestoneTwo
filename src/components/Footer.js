@@ -3,12 +3,12 @@ import { IconButton, Typography, Toolbar, Box, AppBar } from "@mui/material";
 
 const Footer = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, mt: 15 }}>
       <AppBar
         position="static"
         bottom="0"
         color="primary"
-        style={{ position: "fixed", bottom: 0, marginTop: "35px" }}
+        style={{ position: "fixed", bottom: 0 }}
       >
         <Toolbar>
           <Typography

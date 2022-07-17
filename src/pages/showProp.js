@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import axios from "axios";
+
+import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box } from "@mui/material";
 import "./showProp.css";
-import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const developmentURL = "http://localhost:5001/citrus";
+import axios from "axios";
+
+const developmentURL = "http://localhost:5000/api/citrus";
 
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
     axios
-      .delete(`http://localhost:5000/api/citrus/${id}`)
+      .delete(`https://citrusproperty.herokuapp.com/api/citrus/${id}`)
+      // .delete(`http://localhost:5000/api/citrus/${id}`)
       .then(() => {
-        // window.location.reload(false);
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/citrus")
+      .get("https://citrusproperty.herokuapp.com/api/citrus")
+      // .get("http://localhost:5000/api/citrus")
       .then((allProps) => {
         setPropList(allProps.data);
       })
@@ -34,8 +31,10 @@ export default function ShowProps() {
   }, []);
 
   return (
-    <>
-      <h2 className="heading">All Properties</h2>
+    <Box textAlign="center" justifyContent="center" alignItems="center" minHeight="100vh">
+      <Typography variant="h2" color="primary">
+        All Properties
+      </Typography>
       <TableContainer component={Paper} className="table">
         <Table className="table_list" aria-label="simple table">
           <TableHead>
@@ -91,6 +90,6 @@ export default function ShowProps() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 }
