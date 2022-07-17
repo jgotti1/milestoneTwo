@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
 import AddNewProp from "./pages/addNewProp";
 import ShowProps from "./pages/showProp";
+import FourOhFour from "./pages/404";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/AddNewProp" element={<AddNewProp />} />
             <Route path="/ShowProp" element={<ShowProps />}></Route>
-            {/* <Route path="*" element={<FourOhFour />}></Route> */}
+            <Route path="*" element={<FourOhFour />}></Route>
           </Routes>
         </div>
       </BrowserRouter>
