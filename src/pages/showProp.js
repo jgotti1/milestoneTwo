@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box, Card, CardActions, CardContent } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box } from "@mui/material";
 import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -10,6 +10,7 @@ const developmentURL = "http://localhost:5000/api/citrus";
 const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 
 export default function ShowProps() {
+  const navigate = useNavigate();
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
     axios
@@ -22,13 +23,12 @@ export default function ShowProps() {
 
   useEffect(() => {
     axios
-      .get(developmentURL)
+      .get(deploymentURL)
       .then((allProps) => {
         setPropList(allProps.data);
       })
       .catch((err) => console.log(err));
   }, []);
-
   return (
     <Box textAlign="center" justifyContent="center" alignItems="center" minHeight="100vh">
       <Typography variant="h2" color="primary">
