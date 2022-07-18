@@ -1,20 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate} from 'react-router-dom'STAT
-import {
-  Typography,
-  Box,
-  Button,
-  Container,
-  FormControl,
-  Select,
-  InputLabel,
-  MenuItem,
-  TextField
-} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
-
-
 
 const AddNewProp = () => {
   const [newProp, setNewProp] = useState({
@@ -35,16 +23,12 @@ const AddNewProp = () => {
   });
 
   const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus";
-  const developmentURL = "http://localhost:5000/api/citrus"
-
-
+  const developmentURL = "http://localhost:5000/api/citrus";
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(developmentURL, newProp)
-      .then(() =>
-        navigate('/showProp')
-      )
+    axios.post(deploymentURL, newProp).then(() => navigate("/showProp"));
   };
 
   return (
