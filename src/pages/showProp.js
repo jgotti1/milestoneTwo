@@ -16,7 +16,7 @@ export default function ShowProps() {
     setTimeout(() => {
       console.log("refresh");
       handleRefresh();
-    }, 2500);
+    }, 1500);
   };
 
   const handleRefresh = () => {
