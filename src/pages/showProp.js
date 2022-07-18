@@ -14,14 +14,15 @@ export default function ShowProps() {
   const deleteProp = (id) => {
     axios.delete(`${deploymentURL}${id}`);
     setTimeout(() => {
+      console.log("refresh");
       handleRefresh();
-    }, 1000);
+    }, 2500);
   };
 
   const handleRefresh = () => {
     axios.get(deploymentURL).then((allProps) => {
       setPropList(allProps.data);
-      console.log("refresh");
+      console.log("refresh handled");
     });
   };
   useEffect(() => {
