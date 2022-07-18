@@ -63,9 +63,7 @@ export default function ShowProps() {
           <TableBody>
             {propList.map((props, key) => (
               <TableRow key={key}>
-                <TableCell component="th" scope="row">
-                  {props.state}
-                </TableCell>
+                <TableCell component="th" scope="row">{props.state}</TableCell>
                 <TableCell align="right">{props.city}</TableCell>
                 <TableCell align="right">{props.street}</TableCell>
                 <TableCell align="right">{props.apartmentNum}</TableCell>
