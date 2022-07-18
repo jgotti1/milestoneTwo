@@ -8,18 +8,28 @@ import axios from "axios";
 
 const developmentURL = "http://localhost:5000/api/citrus";
 const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
-
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
+
   const deleteProp = (id) => {
     axios.delete(`${deploymentURL}${id}`);
+    setTimeout(() => {
+      handleRefresh();
+    }, 1000);
   };
 
+  const handleRefresh = () => {
+    axios.get(deploymentURL).then((allProps) => {
+      setPropList(allProps.data);
+      console.log("refresh");
+    });
+  };
   useEffect(() => {
     axios
       .get(deploymentURL)
       .then((allProps) => {
         setPropList(allProps.data);
+        console.log("useEffect");
       })
       .catch((err) => console.log(err));
   }, []);
