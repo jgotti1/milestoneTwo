@@ -12,7 +12,16 @@ const getData = async (req, res) => {
 };
 const createData = async (req, res) => {
   const data = req.body;
-  console.log(data, "create test");
+  const newData = new CitrusProperty(data);
+  try {
+    await newData.save();
+    res.status(201).json(newData);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
+const editData = async (req, res) => {
+  const data = req.body;
   const newData = new CitrusProperty(data);
   try {
     await newData.save();
@@ -36,4 +45,5 @@ module.exports = {
   getData,
   createData,
   deleteData,
+  editData,
 };
