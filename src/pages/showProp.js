@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box } from "@mui/material";
+import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box, Card, CardActions, CardContent } from "@mui/material";
 import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -13,7 +13,7 @@ export default function ShowProps() {
   const [propList, setPropList] = useState([]);
   const deleteProp = (id) => {
     axios
-      .delete(`${developmentURL}/${id}`)
+      .delete(`${developmentURL}${id}`)
       .then(() => {
         window.location.reload();
       })
@@ -58,9 +58,7 @@ export default function ShowProps() {
           <TableBody>
             {propList.map((props, key) => (
               <TableRow key={key}>
-                <TableCell component="th" scope="row">
-                  {props.state}
-                </TableCell>
+                <TableCell component="th" scope="row">{props.state}</TableCell>
                 <TableCell align="right">{props.city}</TableCell>
                 <TableCell align="right">{props.street}</TableCell>
                 <TableCell align="right">{props.apartmentNum}</TableCell>
