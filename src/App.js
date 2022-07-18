@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
-import AddNewProp from "./pages/addNewProp";
-import ShowProps from "./pages/showProp";
-import FourOhFour from "./pages/404";
+import AddNewProp from "./pages/AddNewProp";
+// import ShowProps from "./pages/showProp";
+// import FourOhFour from "./pages/404";
+import NewShowPage from "./pages/NewShowPage";
+// import NewNavbar from "./components/NewNavbar";
 
 function App() {
   return (
@@ -15,10 +17,10 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/addnewprop" element={<AddNewProp />} />
-            <Route exact path="/showProp" element={<ShowProps />}></Route>
-            <Route path="*" element={<FourOhFour />}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/AddNewProp" element={<AddNewProp />} />
+            <Route path="/ShowProp" element={<NewShowPage />}></Route>
+            {/* <Route path="*" element={<FourOhFour />}></Route> */}
           </Routes>
         </div>
       </BrowserRouter>

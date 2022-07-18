@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className="item">
         <ul className="ul">
           <li>
-            <Link to="/showprop">Show</Link>
+            <Link to="/ShowProp">Properties</Link>
           </li>
           <li>
             <Link to="/addnewprop">Create</Link>
