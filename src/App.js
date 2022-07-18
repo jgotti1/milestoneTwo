@@ -8,6 +8,7 @@ import AddNewProp from "./pages/AddNewProp";
 // import ShowProps from "./pages/showProp";
 // import FourOhFour from "./pages/404";
 import NewShowPage from "./pages/NewShowPage";
+// import NewNavbar from "./components/NewNavbar";
 
 function App() {
   return (

@@ -13,7 +13,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-import { Container } from "@mui/system";
+// import { Container } from "@mui/system";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -73,10 +73,10 @@ const NewShowPage = () => {
         <Grid
           container
           spacing={{ xs: 1, md: 2 }}
-          columns={{ xs: 'auto', sm: "auto", md: 'auto', lg: 'auto' }}
+          // columns={{ xs: '12', sm: "6", md: '4', lg: '3' }}
         >
           {propList.map((props, key) => (
-            <Grid item xs={'auto'} sm={'auto'} md={'auto'} key={key}>
+            <Grid item xs={'12'} sm={'6'} md={''} lg={'3'}key={key}>
               <Card sx={{ maxWidth: 400 }}>
                 <CardHeader
                   avatar={
@@ -106,7 +106,8 @@ const NewShowPage = () => {
                     <Typography
                       variant="h6"
                       color="secondary"
-                    >{`${props.street}\nApt: ${props.apartmentNum}`}</Typography>
+                    >{`${props.street}\n
+                    Apt: ${props.apartmentNum}`}</Typography>
                   }
                 />
                 <CardContent>
