@@ -15,9 +15,9 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/AddNewProp" element={<AddNewProp />} />
-            <Route path="/ShowProp" element={<ShowProps />}></Route>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/addnewprop" element={<AddNewProp />} />
+            <Route exact path="/showProp" element={<ShowProps />}></Route>
             <Route path="*" element={<FourOhFour />}></Route>
           </Routes>
         </div>
