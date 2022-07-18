@@ -8,7 +8,6 @@ import AddNewProp from "./pages/addNewProp";
 import ShowProps from "./pages/showProp";
 import FourOhFour from "./pages/404";
 
-
 function App() {
   return (
     <div className="App">
