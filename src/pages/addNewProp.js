@@ -114,7 +114,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
-            required
+            require
           />
           <TextField
             onChange={(e) => {
