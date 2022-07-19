@@ -1,4 +1,4 @@
-# Cirtus Property Managment
+# Citrus Property Managment
 > A MERN stack application for managing rental properties.
 
 ![Citrus Preview](public/images/screenshot.png)
@@ -8,7 +8,7 @@
 * [Technologies](#technologies)
 * [Features](#features)
 * [Setup](#setup)
-* [Authors](#authors)
+* [Contributors](#contributors)
 
 ## Discription
 This browser application allows users like landlords/realtors to be able to create, display, and maintain valuable information for their properties. 
@@ -18,10 +18,11 @@ Project is created with:
 * React: 18.2.0
 * Node: 2.0.19
 * Express: 4.18.1
+* Mongoose: 6.4.4
 * Cors: 2.8.5
 * Axios: 0.27.2
+* Heroku: 7.60.2
 * Material UI
-* Heroku
 * MongoDB
 
 ## Features 
@@ -46,7 +47,7 @@ $ npm start
 ```
 Once the dependencies are installed, you will be able to access it at localhost:5000
 
-## Authors
+## Contributors
 Created by
 * [David Wendt](https://github.com/DavidWendtNJIT)
 * [John Margotti](https://github.com/jgotti1)
