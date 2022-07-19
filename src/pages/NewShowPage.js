@@ -31,7 +31,7 @@ const NewShowPage = () => {
     });
   };
   const deleteProp = (id) => {
-    axios.delete(`${deploymentURL}/${id}`);
+    axios.delete(`${deploymentURL}${id}`);
     setTimeout(() => {
       console.log("refresh");
       handleRefresh();
