@@ -23,9 +23,9 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = deploymentURL;
+      const url = developmentURL;
       const { data: res } = await axios.post(url, data);
-      navigate("/login");
+      navigate("/Login");
       console.log(res.message);
     } catch (error) {
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {
