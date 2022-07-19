@@ -1,9 +1,7 @@
-# Cirtus
+# Cirtus Property Managment
 > A MERN stack application for managing rental properties.
 
 ![Citrus Preview](public/images/screenshot.png)
-
----
 
 ## Table of context
 * [Description](#discrition)
@@ -12,14 +10,8 @@
 * [Setup](#setup)
 * [Authors](#authors)
 
----
-
 ## Discription
-This browser application allows users to create and maintain information on their rental properties. 
-
-Simply enter the info of your properties in the form, then hit submit! Updating and deleting entries is just as easy.
-
----
+This browser application allows users like landlords/realtors to be able to create, display, and maintain valuable information for their properties. 
 
 ## Technologies
 Project is created with:
@@ -28,17 +20,13 @@ Project is created with:
 * Express: 4.18.1
 * Cors: 2.8.5
 * Axios: 0.27.2
-* Matrial UI
+* Material UI
 * Heroku
 * MongoDB
 
----
-
 ## Features 
-* Create, update, and delete your entries with a touch of a button
+* Create, update, and delete your entries with a click of a button
 * Easy and fast access to see all your properties
-
----
 
 ## Setup
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
@@ -57,8 +45,6 @@ $ npm install
 $ npm start
 ```
 Once the dependencies are installed, you will be able to access it at localhost:5000
-
----
 
 ## Authors
 Created by
