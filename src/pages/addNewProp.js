@@ -24,6 +24,7 @@ const AddNewProp = () => {
 
   const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus";
   const developmentURL = "http://localhost:5000/api/citrus";
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {

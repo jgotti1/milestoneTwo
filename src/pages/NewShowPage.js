@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { styled } from "@mui/material/styles";
 import { Card, CardHeader, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid } from "@mui/material";
@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
 
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleRefresh = () => {
     axios.get(developmentURL).then((allProps) => {
       setPropList(allProps.data);
@@ -47,7 +47,7 @@ const NewShowPage = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -61,8 +61,8 @@ const NewShowPage = () => {
       {/* <Container sx={{ ml: 4, mr: 4 }}> */}
       <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: "auto", sm: "auto", md: "auto", lg: "auto" }}>
         {propList.map((props, key) => (
-          <Grid item xs={"auto"} sm={"auto"} md={"auto"} key={key}>
-            <Card sx={{ maxWidth: 400 }}>
+          <Grid item xs={"12"} sm={"6"} md={"3"} key={key}>
+            <Card sx={{ maxWidth: 350 }}>
               <CardHeader
                 avatar={
                   <Avatar sx={{ bgcolor: "secondary.green" }} aria-label="recipe">
@@ -80,14 +80,18 @@ const NewShowPage = () => {
                   </IconButton>
                 }
                 title={
-                  <Typography variant="h5" color="secondary">
+                  <Typography variant="h5">
                     {props.city}
                   </Typography>
                 }
-                subheader={<Typography variant="h6" color="secondary">{`${props.street}\nApt: ${props.apartmentNum}`}</Typography>}
+                subheader={
+                  <Typography
+                    variant="h6"
+                  >{props.street}</Typography>
+                }
               />
               <CardContent>
-                <Typography variant="body1" color="secondary">
+                <Typography variant="body1">
                   {`Occupied: ${props.occupied}`}
                 </Typography>
               </CardContent>

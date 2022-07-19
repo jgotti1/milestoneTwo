@@ -23,14 +23,13 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
-            {/* {user && <Route path="/" exact element={<Home />} />} */}
-            <Route path="/" exact element={<Home />} />
+            {user && <Route path="/" exact element={<Home />} />}
+            <Route path="/" element={<Navigate replace to="/Login" />} />
             <Route path="/Signup" exact element={<Signup />} />
             <Route path="/Login" exact element={<Login />} />
             <Route path="/EditProp/:id" element={<EditProp />} />
-            <Route path="/" element={<Navigate replace to="/Login" />} />
-            <Route path="/AddNewProp" element={<AddNewProp />} />
-            <Route path="/ShowProp" element={<NewShowPage />}></Route>
+            <Route path="/addNewProp" element={<AddNewProp />} />
+            <Route path="/showProp" element={<NewShowPage />}></Route>
             {/* <Route path="*" element={<FourOhFour />}></Route> */}
           </Routes>
         </div>
