@@ -44,7 +44,11 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "bcrypt": "^5.0.1",
+    "joi": "^17.5.0",
+    "joi-password-complexity": "^5.1.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "browserslist": {
     "production": [
