@@ -35,11 +35,21 @@ const ExpandMore = styled((props) => {
 
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
+
+
+  const handleRefresh = () => {
+    axios.get(developmentURL).then((allProps) => {
+      setPropList(allProps.data);
+      console.log("refresh handled");
+    });
+  };
+
   const deleteProp = (id) => {
-    axios
-      .delete(`${developmentURL}${id}`)
-      .then(() => navigate("/showProp"))
-      .catch((err) => console.log(err));
+    axios.delete(`${developmentURL}${id}`);
+    setTimeout(() => {
+      console.log("refresh");
+      handleRefresh();
+    }, 100);
   };
 
   const editProp = (id) => {
@@ -51,7 +61,7 @@ const NewShowPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/citrus")
+      .get(developmentURL)
       .then((allProps) => {
         setPropList(allProps.data);
       })
@@ -73,6 +83,7 @@ const NewShowPage = () => {
         <Grid
           container
           spacing={{ xs: 1, md: 2 }}
+          sx={{p: 1}}
           // columns={{ xs: '12', sm: "6", md: '4', lg: '3' }}
         >
           {propList.map((props, key) => (

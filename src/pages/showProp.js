@@ -12,14 +12,8 @@ const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 export default function ShowProps() {
   const navigate = useNavigate();
   const [propList, setPropList] = useState([]);
-  const deleteProp = (id) => {
-    axios
-      .delete(`${developmentURL}${id}`)
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((err) => console.log(err));
-  };
+
+
 
   useEffect(() => {
     axios

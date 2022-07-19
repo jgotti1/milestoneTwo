@@ -19,7 +19,9 @@ const Footer = () => {
           >
             Citrus Property Management &copy; {new Date().getFullYear()}
           </Typography>
-          <IconButton href="https://github.com/NJITGeekSquad/milestoneTwo">
+          <IconButton
+            href="https://github.com/NJITGeekSquad/milestoneTwo"
+          >
             <GitHubIcon />
           </IconButton>
         </Toolbar>
