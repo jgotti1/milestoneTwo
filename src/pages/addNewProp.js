@@ -28,6 +28,22 @@ const AddNewProp = () => {
     if (state.value === '' || state.value == null) {
       messages.push('State is Required')
     }
+    if (city.value === '' || city.value == null) {
+      messages.push('City is Required')
+    }
+    if (street.value === '' || street.value == null) {
+      messages.push('Street is Required')
+    }
+    if (size.value === '' || size.value == null) {
+      messages.push('Size is Required')
+    }
+    if (rent.value === '' || rent.value == null) {
+      messages.push('Rent is Required')
+    }
+    if (occupied.value === '' || occupied.value == null) {
+      messages.push('Size is Required')
+    }
+    
 
     if (message.length > 0) {
       e.preventDefault()
