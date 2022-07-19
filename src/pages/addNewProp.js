@@ -28,7 +28,10 @@ const AddNewProp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(deploymentURL, newProp).then(() => navigate("/showProp"));
+    axios
+      .post(developmentURL, newProp)
+      .then(() => navigate("/showProp"))
+      .catch((err) => console.log(err));
   };
 
   return (

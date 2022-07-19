@@ -19,10 +19,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {user && <Navbar />}
+        {/* {user && <Navbar />} */}
+        <Navbar />
         <div className="pages">
           <Routes>
-            {user && <Route path="/" exact element={<Home />} />}
+            {/* {user && <Route path="/" exact element={<Home />} />} */}
+            <Route path="/" exact element={<Home />} />
             <Route path="/Signup" exact element={<Signup />} />
             <Route path="/Login" exact element={<Login />} />
             <Route path="/EditProp/:id" element={<EditProp />} />
@@ -33,7 +35,8 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-      {user && <Footer />}
+      {/* {user && <Footer />} */}
+      <Footer />
     </div>
   );
 }
