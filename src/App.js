@@ -19,8 +19,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* {user && <Navbar />} */}
-        <Navbar />
+        {user && <Navbar />}
         <div className="pages">
           <Routes>
             {user && <Route path="/" exact element={<Home />} />}
@@ -34,7 +33,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-      {/* {user && <Footer />} */}
+      {user && <Footer />}
       <Footer />
     </div>
   );
