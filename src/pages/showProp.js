@@ -6,7 +6,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import axios from "axios";
 
-const developmentURL = "http://localhost:5000/api/citrus";
+const developmentURL = "http://localhost:5001/api/citrus";
 const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 
 export default function ShowProps() {
