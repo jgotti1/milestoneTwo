@@ -8,7 +8,7 @@ import axios from "axios";
 const EditProp = () => {
   const { id } = useParams();
   const { state } = useLocation();
-  // console.log(state.city);
+  console.log(state);
   const [prop, setProp] = useState(state.city);
   console.log(prop);
   return <div>EDIT PAGE</div>;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import { styled } from "@mui/material/styles";
 import { Card, CardHeader, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid } from "@mui/material";
 // import { Container } from "@mui/system";
@@ -38,12 +37,6 @@ const NewShowPage = () => {
       handleRefresh();
     }, 1200);
   };
-  // const editProp = (id) => {
-  //   axios
-  //     .patch(`${developmentURL}/${id}`)
-  //     .then(() => navigate("/EditProp/:id"))
-  //     .catch((err) => console.log(err));
-  // };
 
   useEffect(() => {
     axios
