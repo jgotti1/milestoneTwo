@@ -1,13 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { Button, IconButton, Box, AppBar, Toolbar } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
+// import { useEffect } from "react";
+
+
+
+
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    navigate("/")
     window.location.reload();
   };
+
+  // useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     navigate("/");
+  //   }
+  // }, []);
+
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //     navigate("/");
+  //     console.log(localStorage.removeItem("token"))
+  // };
 
   return (
     <Box sx={{ flexGrow: 1, mb: 2 }}>
@@ -20,12 +40,12 @@ const Navbar = () => {
             <ul className="ul">
               <li>
                 <Button className="link" variant="text" size="large" edge="end">
-                  <Link to="/ShowProp">All Properties</Link>
+                  <Link to="/showProp">All Properties</Link>
                 </Button>
               </li>
               <li>
                 <Button className="link" variant="text" size="large" edge="end">
-                  <Link to="/AddNewProp">Add New Property</Link>
+                  <Link to="/addNewProp">Add New Property</Link>
                 </Button>
               </li>
               <li>
