@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = developmentURL;
+      const url = deploymentURL;
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       window.location = "/";
