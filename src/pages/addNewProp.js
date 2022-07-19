@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
-
+<html><div id= "error"></div></html>
+const errorElement = document.getElementById('error')
 const AddNewProp = () => {
   const [newProp, setNewProp] = useState({
     state: "",
@@ -21,6 +22,18 @@ const AddNewProp = () => {
     tenantRequests: "",
     tenantNotes: "",
   });
+
+  AddNewProp.addEventListener('submit', (e) => {
+    let messages = []
+    if (state.value === '' || state.value == null) {
+      messages.push('State is Required')
+    }
+
+    if (message.length > 0) {
+      e.preventDefault()
+      errorElement.innerText = messages.join(', ')
+    }
+  })
 
 
   const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus";
