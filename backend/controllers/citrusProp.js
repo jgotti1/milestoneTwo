@@ -21,10 +21,11 @@ const createData = async (req, res) => {
   }
 };
 const editData = async (req, res) => {
+  const id = req.params.id;
   const data = req.body;
   const newData = new CitrusProperty(data);
   try {
-    await newData.save();
+    await CitrusProperty.findByIdAndUpdate(id, newData).exec();
     res.status(201).json(newData);
   } catch (error) {
     res.status(409).json({ message: error.message });
