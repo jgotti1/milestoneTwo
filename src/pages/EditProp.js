@@ -33,7 +33,7 @@ const EditProp = () => {
     e.preventDefault();
     console.log(state._id);
     const id = state._id;
-    axios.patch(`${developmentURL}/${id}`, newProp).then(() => navigate("/showProp"));
+    axios.patch(`${deploymentURL}/${id}`, newProp).then(() => navigate("/showProp"));
   };
 
   return (
