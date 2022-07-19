@@ -27,14 +27,14 @@ const NewShowPage = () => {
   const navigate = useNavigate();
 
   const handleRefresh = () => {
-    axios.get(developmentURL).then((allProps) => {
+    axios.get(deploymentURL).then((allProps) => {
       setPropList(allProps.data);
       console.log("refresh handled");
     });
   };
 
   const deleteProp = (id) => {
-    axios.delete(`${developmentURL}${id}`);
+    axios.delete(`${deploymentURL}${id}`);
     setTimeout(() => {
       console.log("refresh");
       handleRefresh();
