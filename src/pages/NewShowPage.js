@@ -25,6 +25,30 @@ const ExpandMore = styled((props) => {
 
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
+<<<<<<< HEAD
+
+
+  const handleRefresh = () => {
+    axios.get(developmentURL).then((allProps) => {
+      setPropList(allProps.data);
+      console.log("refresh handled");
+    });
+  };
+
+  const deleteProp = (id) => {
+    axios.delete(`${developmentURL}${id}`);
+    setTimeout(() => {
+      console.log("refresh");
+      handleRefresh();
+    }, 100);
+  };
+
+  const editProp = (id) => {
+    axios
+      .patch(`${developmentURL}${id}`)
+      .then(() => navigate("/editProp"))
+      .catch((err) => console.log(err));
+=======
   const navigate = useNavigate();
   const handleRefresh = () => {
     axios.get(deploymentURL).then((allProps) => {
@@ -37,6 +61,7 @@ const NewShowPage = () => {
       console.log("refresh");
       handleRefresh();
     }, 1200);
+>>>>>>> 86bb6b456b84d07e1931fec987fc1b30be3a3e07
   };
   // const editProp = (id) => {
   //   axios
@@ -47,7 +72,11 @@ const NewShowPage = () => {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
+      .get(developmentURL)
+=======
       .get(deploymentURL)
+>>>>>>> 86bb6b456b84d07e1931fec987fc1b30be3a3e07
       .then((allProps) => {
         setPropList(allProps.data);
       })
@@ -66,6 +95,55 @@ const NewShowPage = () => {
         All Properties
       </Typography>
       {/* <Container sx={{ ml: 4, mr: 4 }}> */}
+<<<<<<< HEAD
+        <Grid
+          container
+          spacing={{ xs: 1, md: 2 }}
+          sx={{p: 1}}
+          // columns={{ xs: '12', sm: "6", md: '4', lg: '3' }}
+        >
+          {propList.map((props, key) => (
+            <Grid item xs={'12'} sm={'6'} md={''} lg={'3'}key={key}>
+              <Card sx={{ maxWidth: 400 }}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      sx={{ bgcolor: "secondary.green" }}
+                      aria-label="recipe"
+                    >
+                      {props.state}
+                    </Avatar>
+                  }
+                  action={
+                    <IconButton
+                      aria-label="delete"
+                      onClick={() => {
+                        deleteProp(props._id);
+                      }}
+                    >
+                      <DeleteIcon color="secondary" />
+                    </IconButton>
+                  }
+                  title={
+                    <Typography variant="h5" color="secondary">
+                      {props.city}
+                    </Typography>
+                  }
+                  subheader={
+                    <Typography
+                      variant="h6"
+                      color="secondary"
+                    >{`${props.street}\n
+                    Apt: ${props.apartmentNum}`}</Typography>
+                  }
+                />
+                <CardContent>
+                  <Typography variant="body1" color="secondary">
+                    {`Occupied: ${props.occupied}`}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+=======
       <Grid
         container
         spacing={{ xs: 1, md: 2 }}
@@ -81,6 +159,7 @@ const NewShowPage = () => {
                   </Avatar>
                 }
                 action={
+>>>>>>> 86bb6b456b84d07e1931fec987fc1b30be3a3e07
                   <IconButton
                     aria-label="delete"
                     onClick={() => {

@@ -11,6 +11,9 @@ const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
 
+<<<<<<< HEAD
+
+=======
   const deleteProp = (id) => {
     axios.delete(`${deploymentURL}${id}`);
     setTimeout(() => {
@@ -18,6 +21,7 @@ export default function ShowProps() {
       handleRefresh();
     }, 1500);
   };
+>>>>>>> 86bb6b456b84d07e1931fec987fc1b30be3a3e07
 
   const handleRefresh = () => {
     axios.get(deploymentURL).then((allProps) => {
