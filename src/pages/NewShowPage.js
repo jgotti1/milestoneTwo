@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
 
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleRefresh = () => {
     axios.get(developmentURL).then((allProps) => {
       setPropList(allProps.data);
@@ -79,21 +79,11 @@ const NewShowPage = () => {
                     <DeleteIcon color="secondary" />
                   </IconButton>
                 }
-                title={
-                  <Typography variant="h5">
-                    {props.city}
-                  </Typography>
-                }
-                subheader={
-                  <Typography
-                    variant="h6"
-                  >{props.street}</Typography>
-                }
+                title={<Typography variant="h5">{props.city}</Typography>}
+                subheader={<Typography variant="h6">{props.street}</Typography>}
               />
               <CardContent>
-                <Typography variant="body1">
-                  {`Occupied: ${props.occupied}`}
-                </Typography>
+                <Typography variant="body1">{`Occupied: ${props.occupied}`}</Typography>
               </CardContent>
               <CardActions disableSpacing>
                 <IconButton
