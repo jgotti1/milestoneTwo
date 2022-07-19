@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
 
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
-
+  const navigate = useNavigate();
 
   const handleRefresh = () => {
     axios.get(developmentURL).then((allProps) => {
@@ -39,13 +39,6 @@ const NewShowPage = () => {
       console.log("refresh");
       handleRefresh();
     }, 100);
-  };
-
-  const editProp = (id) => {
-    axios
-      .patch(`${developmentURL}${id}`)
-      .then(() => navigate("/editProp"))
-      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -113,8 +106,6 @@ const NewShowPage = () => {
                   aria-label="edit"
                   onClick={() => {
                     navigate(`/EditProp/${props._id}`, { state: propList.filter((property) => property._id === props._id)[0] });
-                    // editProp(props._id);
-                    // console.log(props._id);
                   }}
                 >
                   <EditIcon color="secondary" />

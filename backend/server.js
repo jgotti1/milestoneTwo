@@ -15,7 +15,6 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "..", "build")));
 
-
 app.get("/", (req, res, next) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
@@ -24,7 +23,6 @@ app.use("/api", router);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.get("/api/citrus", (req, res) => {
-  console.log(res);
   res.send("Hello Citrus Property Managment Site!");
 });
 
