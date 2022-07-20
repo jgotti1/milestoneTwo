@@ -8,7 +8,7 @@ const Footer = () => {
         position="static"
         bottom="0"
         color="primary"
-        style={{ position: "fixed", bottom: 0 }}
+        style={{ position: "fixed", bottom: 0, zIndex: 1100 }}
       >
         <Toolbar>
           <Typography
@@ -26,7 +26,7 @@ const Footer = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-    </Box>
+    </Box >
   );
 };
 
