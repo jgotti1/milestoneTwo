@@ -26,14 +26,14 @@ const EditProp = () => {
   });
 
   const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus";
-  const developmentURL = "http://localhost:5001/api/citrus";
+  const developmentURL = "http://localhost:5000/api/citrus";
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state._id);
     const id = state._id;
-    axios.patch(`${developmentURL}/${id}`, newProp).then(() => navigate("/showProp"));
+    axios.patch(`${deploymentURL}/${id}`, newProp).then(() => navigate("/showProp"));
   };
 
   return (

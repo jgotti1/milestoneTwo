@@ -6,12 +6,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
 import AddNewProp from "./pages/addNewProp";
 import EditProp from "./pages/EditProp";
-// import ShowProps from "./pages/showProp";
-// import FourOhFour from "./pages/404";
 import NewShowPage from "./pages/NewShowPage";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
-// import NewNavbar from "./components/NewNavbar";
 
 function App() {
   const user = localStorage.getItem("token");
