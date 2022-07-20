@@ -16,17 +16,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = developmentURL;
+      const url = deploymentURL;
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       window.location = "/";
       console.log(res.message);
     } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
+      if (error.response && error.response.status >= 400 && error.response.status <= 500) {
         setError(error.response.data.message);
       }
     }
@@ -39,24 +35,8 @@ const Login = () => {
           <h1 className="logo">Citrus.</h1>
           <form className={styles.form_container} onSubmit={handleSubmit}>
             <h1>Login to Your Account</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={handleChange}
-              value={data.email}
-              required
-              className={styles.input}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={handleChange}
-              value={data.password}
-              required
-              className={styles.input}
-            />
+            <input type="email" placeholder="Email" name="email" onChange={handleChange} value={data.email} required className={styles.input} />
+            <input type="password" placeholder="Password" name="password" onChange={handleChange} value={data.password} required className={styles.input} />
             {error && <div className={styles.error_msg}>{error}</div>}
             <button type="submit" className={styles.orange_btn}>
               Sign In

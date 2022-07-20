@@ -26,12 +26,12 @@ const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
   const navigate = useNavigate();
   const handleRefresh = () => {
-    axios.get(developmentURL).then((allProps) => {
+    axios.get(deploymentURL).then((allProps) => {
       setPropList(allProps.data);
     });
   };
   const deleteProp = (id) => {
-    axios.delete(`${developmentURL}/${id}`);
+    axios.delete(`${deploymentURL}${id}`);
     setTimeout(() => {
       console.log("refresh");
       handleRefresh();
@@ -40,7 +40,7 @@ const NewShowPage = () => {
 
   useEffect(() => {
     axios
-      .get(developmentURL)
+      .get(deploymentURL)
       .then((allProps) => {
         setPropList(allProps.data);
       })
