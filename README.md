@@ -1,7 +1,7 @@
 # Citrus Property Managment
 > A MERN stack application for managing rental properties.
 
-![Citrus Preview](public/images/screenshot.png)
+![Citrus Preview]()
 
 ## Table of context
 * [Description](#discrition)
@@ -19,13 +19,17 @@ Project is created with:
 * Node: 2.0.19
 * Express: 4.18.1
 * Mongoose: 6.4.4
-* Cors: 2.8.5
 * Axios: 0.27.2
 * Heroku: 7.60.2
+* Joi: 17.5.0
+* Joi-Password-Complexity: 5.1.0
+* Bcrypt: 5.0.1
 * Material UI
 * MongoDB
 
 ## Features 
+* Material UI design
+* Login and sign up fully integrated
 * Create, update, and delete your entries with a click of a button
 * Easy and fast access to see all your properties
 
@@ -43,6 +47,7 @@ $ cd milestoneTwo
 $ npm install
 
 # Run the app
+$ npm run build
 $ npm start
 ```
 Once the dependencies are installed, you will be able to access it at localhost:5000

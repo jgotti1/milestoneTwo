@@ -1,46 +1,46 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Typography, Box, Button, Container, FormControl, Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import axios from "axios";
-<html><div id="error"></div></html>
-const errorElement = document.getElementById('error')
-const AddNewProp = () => {
+
+const EditProp = () => {
+  const { state } = useLocation();
+  console.log(state);
   const [newProp, setNewProp] = useState({
-    state: "",
-    city: "",
-    street: "",
-    apartmentNum: "",
-    size: "",
-    rent: "",
-    occupied: "",
-    tenantName: "",
+    _id: state._id,
+    state: state.state,
+    city: state.city,
+    street: state.street,
+    apartmentNum: state.apartmentNum,
+    size: state.size,
+    rent: state.rent,
+    occupied: state.occupied,
+    tenantName: state.tenantName,
     occupiedDate: Date,
-    numOccupants: "",
-    pets: "",
-    latePayment: "",
-    tenantRequests: "",
-    tenantNotes: "",
+    numOccupants: state.numOccupants,
+    pets: state.pets,
+    latePayment: state.latePayment,
+    tenantRequests: state.tenantRequests,
+    tenantNotes: state.tenantNotes,
   });
 
   const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus";
   const developmentURL = "http://localhost:5001/api/citrus";
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(developmentURL, newProp)
-      .then(() => navigate("/showProp"))
-      .catch((err) => console.log(err));
+    console.log(state._id);
+    const id = state._id;
+    axios.patch(`${developmentURL}/${id}`, newProp).then(() => navigate("/showProp"));
   };
 
   return (
     <Box textAlign="center" justifyContent="center" alignItems="center">
       <Container size="sm">
         <Typography variant="h3" color="primary" gutterBottom>
-          Add a New Property
+          Edit Property Information
         </Typography>
         <h5>* = Required Field</h5>
         <Box>
@@ -118,6 +118,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.city}
             require
           />
           <TextField
@@ -129,6 +130,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.street}
             required
           />
           <TextField
@@ -139,6 +141,7 @@ const AddNewProp = () => {
             variant="outlined"
             color="primary"
             margin="dense"
+            value={newProp.apartmentNum}
             fullWidth
           />
           <TextField
@@ -150,6 +153,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.size}
             required
           />
           <TextField
@@ -161,6 +165,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.rent}
             required
           />
           <FormControl sx={{ minWidth: "100%" }} margin="dense">
@@ -189,6 +194,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.tenantName}
           />
           <TextField
             onChange={(e) => {
@@ -199,6 +205,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.occupiedDate}
           />
 
           <TextField
@@ -211,6 +218,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.numOccupants}
           />
 
           <FormControl sx={{ minWidth: "100%" }} margin="dense">
@@ -255,6 +263,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.tenantRequests}
           />
           <TextField
             onChange={(e) => {
@@ -265,6 +274,7 @@ const AddNewProp = () => {
             color="primary"
             margin="dense"
             fullWidth
+            value={newProp.tenantNotes}
           />
 
           <Button
@@ -275,7 +285,7 @@ const AddNewProp = () => {
             variant="contained"
             endIcon={<KeyboardArrowRightIcon />}
           >
-            Submit New Property
+            Submit Changes
           </Button>
         </Box>
       </Container>
@@ -283,4 +293,4 @@ const AddNewProp = () => {
   );
 };
 
-export default AddNewProp;
+export default EditProp;

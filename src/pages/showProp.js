@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { Typography, Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, IconButton, Box } from "@mui/material";
 import "./showProp.css";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -8,27 +8,32 @@ import axios from "axios";
 
 const developmentURL = "http://localhost:5001/api/citrus";
 const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
-
 export default function ShowProps() {
   const [propList, setPropList] = useState([]);
+
   const deleteProp = (id) => {
-    axios
-      .delete(`${developmentURL}/${id}`)
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((err) => console.log(err));
+    axios.delete(`${deploymentURL}${id}`);
+    setTimeout(() => {
+      console.log("refresh");
+      handleRefresh();
+    }, 1500);
   };
 
+  const handleRefresh = () => {
+    axios.get(deploymentURL).then((allProps) => {
+      setPropList(allProps.data);
+      console.log("refresh handled");
+    });
+  };
   useEffect(() => {
     axios
-      .get(developmentURL)
+      .get(deploymentURL)
       .then((allProps) => {
         setPropList(allProps.data);
+        console.log("useEffect");
       })
       .catch((err) => console.log(err));
   }, []);
-
   return (
     <Box textAlign="center" justifyContent="center" alignItems="center" minHeight="100vh">
       <Typography variant="h2" color="primary">
@@ -58,9 +63,7 @@ export default function ShowProps() {
           <TableBody>
             {propList.map((props, key) => (
               <TableRow key={key}>
-                <TableCell component="th" scope="row">
-                  {props.state}
-                </TableCell>
+                <TableCell component="th" scope="row">{props.state}</TableCell>
                 <TableCell align="right">{props.city}</TableCell>
                 <TableCell align="right">{props.street}</TableCell>
                 <TableCell align="right">{props.apartmentNum}</TableCell>
