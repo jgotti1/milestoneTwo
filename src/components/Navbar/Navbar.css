@@ -42,3 +42,7 @@ a {
     color: orange;
     font-weight: bolder;
 }
+
+.poppins {
+        font-family: 'Poppins', sans-serif;
+}

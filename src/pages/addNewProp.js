@@ -59,7 +59,7 @@ const AddNewProp = () => {
               }}
               required
             >
-              <MenuItem value={"AL"}>AL</MenuItem>
+              <MenuItem sx={{maxWidth: 8}}value={"AL"}>AL</MenuItem>
               <MenuItem value={"AK"}>AK</MenuItem>
               <MenuItem value={"AZ"}>AZ</MenuItem>
               <MenuItem value={"AR"}>AR</MenuItem>

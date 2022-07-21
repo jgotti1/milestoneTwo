@@ -23,7 +23,6 @@ const developmentURL = "http://localhost:5000/api/citrus";
 const deploymentURL = "https://citrusproperty.herokuapp.com/api/citrus/";
 
 
-
 const NewShowPage = () => {
   const [propList, setPropList] = useState([]);
   const navigate = useNavigate();
@@ -53,13 +52,15 @@ const NewShowPage = () => {
   return (
     <>
       <Typography variant="h2" textAlign={"center"} sx={{ mb: 3 }}>
-        All Properties
+        All Purchased Properties
       </Typography>
       {/* <Container sx={{ ml: 4, mr: 4 }}> */}
 
       <Grid
         container
-        spacing={{ xs: 1, md: 2 }}
+        sx={{px: 3, display: "flex", justifyContent: "center"}}
+        alignItems="center"
+        spacing={{ xs: 1, md: 4 }}
         columns={{ xs: "auto", sm: "auto", md: "auto", lg: "auto" }}
       >
         {propList.map((props, i) => (

@@ -24,7 +24,7 @@ const NewNavBar = () => {
   };
   return (
     <Box sx={{ flexGrow: 1, mb: 2 }}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" color="secondary" >
         <Toolbar>
           <Typography
             sx={{ fontWeight: "bold", flexGrow: 1 }}
@@ -34,24 +34,23 @@ const NewNavBar = () => {
           >
             Citrus.
           </Typography>
-          <Button variant="text" size="large">
-            <Link underline="none" to="/ShowProp">
-              All Properties
-            </Link>
-          </Button>
-          <Button variant="text" size="large">
-            <Link underline="none" to="/AddNewProp">
-              Add New Property
-            </Link>
-          </Button>
-          <IconButton
-            color="primary"
-            variant="text"
-            size="large"
-            onClick={handleLogout}
-          >
-            <LogoutIcon />
-          </IconButton>
+
+          <div style={(flexGrow = 1)}>
+            <Button variant="text" size="large">
+              <Link underline="none" to="/ShowProp">
+                All Properties
+              </Link>
+            </Button>
+            <Button variant="text" size="large">
+              <Link underline="none" to="/AddNewProp">
+                Add New Property
+              </Link>
+            </Button>
+            <IconButton variant="text" size="large" onClick={handleLogout}>
+              Logout
+              <LogoutIcon />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     </Box>
