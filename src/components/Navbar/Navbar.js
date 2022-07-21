@@ -1,21 +1,25 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { Button, IconButton, Box, AppBar, Toolbar } from "@mui/material";
+import {
+  Button,
+  IconButton,
+  Box,
+  AppBar,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 // import { useEffect } from "react";
 
-
-
-
-
 const Navbar = () => {
-
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/")
+    navigate("/");
     window.location.reload();
   };
+
+  const pointer = { cursor: "pointer" };
 
   // useEffect(() => {
   //   if (!localStorage.getItem("token")) {
@@ -30,37 +34,67 @@ const Navbar = () => {
   // };
 
   return (
-    <Box sx={{ flexGrow: 1, mb: 2 }}>
-      <AppBar position="static" color="secondary">
+    <Box sx={{ display: "flex", mb: 2 }}>
+      <AppBar position="static" color="secondary" component="nav">
         <Toolbar>
-          <div className="logo">
+          <Typography
+            variant="h2"
+            color="primary"
+            sx={{
+              flexGrow: 1,
+              display: "block",
+              fontFamily: "Poppins",
+              fontWeight: "700",
+            }}
+          >
             <Link to="/">Citrus.</Link>
-          </div>
-          <nav className="item">
-            <ul className="ul">
-              <li>
-                <Button className="link" variant="text" size="large" edge="end">
-                  <Link to="/showProp">All Properties</Link>
-                </Button>
-              </li>
-              <li>
-                <Button className="link" variant="text" size="large" edge="end">
-                  <Link to="/addNewProp">Add New Property</Link>
-                </Button>
-              </li>
-              <li>
-                <IconButton
-                  className="link"
-                  variant="text"
-                  size="large"
-                  edge="end"
-                  onClick={handleLogout}
-                >
-                  <LogoutIcon />
-                </IconButton>
-              </li>
-            </ul>
-          </nav>
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              display: "inline-block",
+              fontFamily: "Poppins",
+            }}
+          >
+            <Button className="link" size="large">
+              <Link to="/showProp">All Properties</Link>
+            </Button>
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              display: "inline-block",
+              fontFamily: "Poppins",
+            }}
+          >
+            <Button className="link" size="large">
+              <Link to="/addNewProp">Add New Property</Link>
+            </Button>
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              display: "inline-block",
+              fontFamily: "Poppins",
+            }}
+          >
+            <Button className="link" size="large">
+              <Link to="/" onClick={handleLogout}>
+                Logout
+              </Link>
+            </Button>
+          </Typography>
+          <IconButton sx={{ pointer }}>
+            <LogoutIcon
+              color="primary"
+              className="link"
+              variant="text"
+              size="medium"
+              end="end"
+              onClick={handleLogout}
+              sx={{ pointer }}
+            />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>
